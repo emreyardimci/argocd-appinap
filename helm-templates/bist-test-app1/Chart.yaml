@@ -1,0 +1,4 @@
+apiVersion: v1
+description: A Helm chart for bist-test-app1
+name: bist-test-app1
+version: 0.0.1
