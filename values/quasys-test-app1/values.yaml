@@ -46,14 +46,6 @@ resources:
   limits:
     cpu: 800m
     memory: 1500Mi
-# hpa controls
-hpa:
-  enabled: true
-  averageUtilization:
-    memory: 95
-    cpu: 95
-  minReplicas: 2
-  maxReplicas: 4
 # Service controls
 service:
   port: 8083
