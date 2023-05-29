@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: quasys-test-app2
-  namespace: openshift-gitops
+  namespace: argocd
 spec:
   destination:
     name: in-cluster
