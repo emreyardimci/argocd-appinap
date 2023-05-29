@@ -18,7 +18,7 @@ containerPort2: 9080
 image:
   pullPolicy: Always
   repository: image.repo.local:8082/platform/quasys-test-app2
-  tag: 0.0.1-dce95515
+  tag: 0.0.1-dce95515N
 readinessProbe:
   httpGet:
     path: /actuator/health/readiness
