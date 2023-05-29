@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bist-test-app0
+  name: quasys-test-app1
   namespace: openshift-gitops
 spec:
   destination:
     name: in-cluster
-    namespace: test-apps
+    namespace: argocd-testapps
   source:
     targetRevision: HEAD
-    repoURL: https://git.borsaistanbul.com/...../..../.....git
-    path: values/bist-test-app0
+    repoURL: https://github.com/emreyardimci/argocd-appinap.git
+    path: values/quasys-test-app1
   syncPolicy:
     automated:
       prune: true

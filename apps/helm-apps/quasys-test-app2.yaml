@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: quasys-test-app2
+  namespace: openshift-gitops
+spec:
+  destination:
+    name: in-cluster
+    namespace: argocd-testapps
+  source:
+    targetRevision: HEAD
+    repoURL: https://github.com/emreyardimci/argocd-appinap.git
+    path: values/quasys-test-app2
+  syncPolicy: {}
+  project: default

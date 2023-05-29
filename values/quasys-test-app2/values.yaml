@@ -4,7 +4,7 @@
 
 # Common controls
 environment: dev
-application: bist-test-app1
+application: quasys-test-app2
 namespace: "test-account"
 # Deployment controls
 nodeSelector: {}
@@ -12,12 +12,12 @@ tolerations: []
 affinity: {}
 replicaCount: 2
 restartPolicy: Always
-containerName: bist-test-app1
+containerName: quasys-test-app2
 containerPort: 8083
 containerPort2: 9080
 image:
   pullPolicy: Always
-  repository: image.repo.local:8082/platform/bist-test-app1
+  repository: image.repo.local:8082/platform/quasys-test-app2
   tag: 0.0.1-dce95515
 readinessProbe:
   httpGet:

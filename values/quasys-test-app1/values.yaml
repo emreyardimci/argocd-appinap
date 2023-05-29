@@ -1,0 +1,66 @@
+# Default values for finance-moneytransfer-core.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Common controls
+environment: dev
+application: quasys-test-app1
+namespace: "test-account"
+# Deployment controls
+nodeSelector: {}
+tolerations: []
+affinity: {}
+replicaCount: 2
+restartPolicy: Always
+containerName: quasys-test-app1
+containerPort: 8083
+containerPort2: 9080
+image:
+  pullPolicy: Always
+  repository: image.repo.local:8082/platform/quasys-test-app1
+  tag: 0.0.1-dce95515
+readinessProbe:
+  httpGet:
+    path: /actuator/health/readiness
+    port: 9080
+    scheme: HTTP
+  initialDelaySeconds: 30
+  timeoutSeconds: 5
+  periodSeconds: 10
+  successThreshold: 1
+  failureThreshold: 10
+livenessProbe:
+  httpGet:
+    path: /actuator/health/liveness
+    port: 9080
+    scheme: HTTP
+  initialDelaySeconds: 60
+  timeoutSeconds: 5
+  periodSeconds: 10
+  successThreshold: 1
+  failureThreshold: 10
+resources:
+  requests:
+    cpu: 200m
+    memory: 1000Mi
+  limits:
+    cpu: 800m
+    memory: 1500Mi
+# hpa controls
+hpa:
+  enabled: true
+  averageUtilization:
+    memory: 95
+    cpu: 95
+  minReplicas: 2
+  maxReplicas: 4
+# Service controls
+service:
+  port: 8083
+  port2: 9080
+  type: ClusterIP
+# configmap and secrets
+envVar:
+  configmap:
+    KAFKA_CFG: "test"
+  secret: true
