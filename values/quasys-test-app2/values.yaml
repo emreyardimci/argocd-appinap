@@ -5,7 +5,7 @@
 # Common controls
 environment: dev
 application: quasys-test-app2
-namespace: "argocd-testapps"
+namespace: "argocd-testapps2"
 # Deployment controls
 nodeSelector: {}
 tolerations: []

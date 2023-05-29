@@ -6,7 +6,7 @@ metadata:
 spec:
   destination:
     name: in-cluster
-    namespace: argocd-testapps
+    namespace: argocd-testapps2
   source:
     targetRevision: HEAD
     repoURL: https://github.com/emreyardimci/argocd-appinap.git
