@@ -15,4 +15,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+      force: true
   project: default
